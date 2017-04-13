@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
 
@@ -23,8 +23,20 @@
     <property name="current_session_context_class">thread</property>
     <!-- 在控制台输出sql语句 -->
     <property name="show_sql">true</property>
-    <!-- 在启动时根据配置更新数据库 -->
-    <property name="hbm2ddl.auto">update</property>
+    <!--&lt;!&ndash; 在启动时根据配置更新数据库 &ndash;&gt;-->
+    <!--<property name="hbm2ddl.auto">update</property>-->
+
+    <!--  连接池 -->
+    <property name="c3p0.min_size">5</property> <!--在连接池中可用数据库连接的最小数目-->
+    <property name="c3p0.max_size">30</property> <!--在连接池中所有数据库连接的最大数目-->
+    <property name="c3p0.time_out">1800</property> <!--设定数据库连接的超时时间-->
+    <property name="c3p0.max_statement">50</property> <!--可以被缓存的PreparedStatement的最大数目-->
+
+    <!--当然也可以不使用上面这种指定的方式，而使用包扫描的方式做为替换，推荐这种-->
+    <!--<property name="packagesToScan">xyz.yanyj</property>-->
+    <mapping class="xyz.yanyj.ticket.Ticket"/><!-- 注册我们的实体映射类-->
+    <mapping class="xyz.yanyj.ticket.Profit"/><!-- 注册我们的实体映射类-->
+    <mapping class="xyz.yanyj.ticket.Account"/><!-- 注册我们的实体映射类-->
     <mapping class="test.User"/><!-- 注册我们的实体映射类-->
 </session-factory>
 </hibernate-configuration>
