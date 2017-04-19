@@ -1,8 +1,8 @@
-package test;
+package xyz.yanyj.base;
 
-import xyz.yanyj.base.BaseEntity;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_user")

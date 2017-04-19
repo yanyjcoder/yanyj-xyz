@@ -1,5 +1,6 @@
 import org.junit.Test;
 import xyz.yanyj.util.BigDecimalUtils.BigDecimalUtil;
+import xyz.yanyj.util.StringUtil.StringUtil;
 
 import java.math.BigDecimal;
 
@@ -11,8 +12,7 @@ public class BigDecimalUtilTest {
 
     @Test
     public void testSetScale() {
-        BigDecimal bigDecimal = new BigDecimal("1.23456");
-        System.err.println(BigDecimalUtil.setScale(bigDecimal, 0));
+        System.err.println(StringUtil.isNullOrEmpty("1"));
     }
 
     @Test
@@ -22,4 +22,6 @@ public class BigDecimalUtilTest {
 
         System.err.println(BigDecimalUtil.mul(bigDecimal1, bigDecimal2));
     }
+
+
 }
