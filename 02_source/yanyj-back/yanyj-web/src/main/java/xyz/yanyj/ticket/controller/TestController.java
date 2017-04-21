@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import xyz.yanyj.ticket.service.UserService;
+import xyz.yanyj.util.StringUtil.JsonUtil;
 
 /**
  *
@@ -26,6 +27,6 @@ public class TestController {
     public String returnString() {
 
 //        return userService.get("40287d815b7eef9b015b7eef9ebd0000").getUsername();
-        return "";
+        return JsonUtil.convertToJson(userService.getUserList());
     }
 }
