@@ -1,5 +1,8 @@
 package xyz.yanyj.util.StringUtil;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,5 +35,19 @@ public class StringUtil {
 
     public static boolean isEmpty(CharSequence cs) {
         return cs == null || cs.length() == 0;
+    }
+
+
+    public static StringBuilder getSelectHeader(String... columns) {
+
+        StringBuilder sb = new StringBuilder("SELECT");
+        if(columns.length > 0) {
+            sb.append(" ");
+            sb.append(StringUtils.join(columns, ","));
+        } else {
+            sb.append( "*");
+        }
+
+        return sb;
     }
 }

@@ -1,9 +1,7 @@
-package xyz.yanyj.ticket.dao;
+package xyz.yanyj.services.dao;
 
 import xyz.yanyj.base.User;
 import xyz.yanyj.util.PageUtil.Page;
-
-import java.util.List;
 
 
 /**

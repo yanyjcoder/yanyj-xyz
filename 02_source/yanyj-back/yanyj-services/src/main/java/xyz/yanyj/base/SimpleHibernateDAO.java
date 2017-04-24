@@ -8,6 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.metadata.ClassMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import xyz.yanyj.util.PageUtil.QueryParameter;
 import xyz.yanyj.util.ReflectUtil.ReflectUtil;
 
@@ -48,7 +49,7 @@ public class SimpleHibernateDAO<T, Id extends Serializable> {
      * 取得当前Session.
      */
     public Session getSession() {
-        return sessionFactory.openSession();
+        return sessionFactory.getCurrentSession();
     }
 
 
@@ -60,6 +61,7 @@ public class SimpleHibernateDAO<T, Id extends Serializable> {
 
         try {
             getSession().saveOrUpdate(entity);
+            flush();
         } catch (HibernateException e) {
             throw new HibernateException(e);
         }
@@ -83,6 +85,7 @@ public class SimpleHibernateDAO<T, Id extends Serializable> {
     public void delete(T entity) {
         try {
             getSession().delete(entity);
+            flush();
         } catch (HibernateException e) {
             throw new HibernateException(e);
         }

@@ -1,4 +1,4 @@
-package xyz.yanyj.ticket.dao;
+package xyz.yanyj.services.dao;
 
 import java.io.Serializable;
 import java.util.List;

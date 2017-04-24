@@ -1,4 +1,4 @@
-package xyz.yanyj.ticket;
+package xyz.yanyj.entity.ticket;
 
 import xyz.yanyj.base.BaseEntity;
 

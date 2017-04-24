@@ -9,6 +9,6 @@
 
     <context:property-placeholder location="classpath:config.properties"/>
     <!-- 扫描service自动注入为bean -->
-    <context:component-scan base-package="xyz.yanyj.ticket.service.impl, xyz.yanyj.ticket.dao.impl" />
+    <context:component-scan base-package="xyz.yanyj.services.service.impl, xyz.yanyj.services.dao.impl" />
 
 </beans>

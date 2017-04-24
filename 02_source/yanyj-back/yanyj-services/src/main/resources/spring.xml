@@ -9,6 +9,13 @@
 
     <context:property-placeholder location="classpath:config.properties"/>
     <!-- 扫描service自动注入为bean -->
-    <context:component-scan base-package="xyz.yanyj.ticket.service.impl, xyz.yanyj.ticket.dao.impl, xyz.yanyj.base.*" />
+    <!--<context:component-scan base-package="xyz.yanyj.services.service.impl, xyz.yanyj.services.dao.impl" />-->
+    <!--&lt;!&ndash; 使用annotation自动注册bean &ndash;&gt;-->
+    <context:annotation-config/>
+    <context:component-scan base-package="xyz.yanyj">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
 
 </beans>

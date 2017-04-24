@@ -1,11 +1,11 @@
-package xyz.yanyj.ticket.dao.impl;
+package xyz.yanyj.services.dao.impl;
 
 
 import org.springframework.stereotype.Repository;
 
 import xyz.yanyj.base.HibernateDAO;
 import xyz.yanyj.base.User;
-import xyz.yanyj.ticket.dao.UserDao;
+import xyz.yanyj.services.dao.UserDao;
 import xyz.yanyj.util.PageUtil.Page;
 import xyz.yanyj.util.PageUtil.QueryParameter;
 

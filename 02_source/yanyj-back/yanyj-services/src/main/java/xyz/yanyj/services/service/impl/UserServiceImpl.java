@@ -1,14 +1,12 @@
-package xyz.yanyj.ticket.service.impl;
+package xyz.yanyj.services.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import xyz.yanyj.base.User;
-import xyz.yanyj.ticket.dao.UserDao;
-import xyz.yanyj.ticket.service.UserService;
+import xyz.yanyj.services.dao.UserDao;
+import xyz.yanyj.services.service.UserService;
 import xyz.yanyj.util.PageUtil.Page;
-
-import java.util.List;
 
 /**
  * Created by yanyj on 2017/4/17.
@@ -16,7 +14,7 @@ import java.util.List;
 
 @Transactional
 @Service("userService")
-public class UserServiceImpl implements UserService  {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
@@ -33,6 +31,8 @@ public class UserServiceImpl implements UserService  {
 
     @Override
     public Page<User> getUserList() {
+
+
         return userDao.getUserList();
     }
 //

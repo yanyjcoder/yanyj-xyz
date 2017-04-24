@@ -1,9 +1,8 @@
-package xyz.yanyj.ticket.service;
+package xyz.yanyj.services.service;
 
 import xyz.yanyj.base.User;
+import xyz.yanyj.entity.ticket.Lottery;
 import xyz.yanyj.util.PageUtil.Page;
-
-import java.util.List;
 
 /**
  * Created by yanyj on 2017/4/17.

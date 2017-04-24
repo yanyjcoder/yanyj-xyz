@@ -1,4 +1,4 @@
-package xyz.yanyj.ticket;
+package xyz.yanyj.entity.ticket;
 
 import xyz.yanyj.base.BaseEntity;
 
@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "t_ticket_lottery")
-public class Ticket extends BaseEntity{
+public class Lottery extends BaseEntity{
 
     /***
      * 流水单号
@@ -29,15 +29,21 @@ public class Ticket extends BaseEntity{
     private String lotteryClass;
 
     /***
-     * 彩票种类
+     * 彩票种类 滚球 - 0，胜负 - 1
      */
-    @Column(length = 50)
-    private String lotteryType;
+    @Column()
+    private int lotteryType;
+
+    /***
+     * 彩票范围 全场 - 0， 半场 -1
+     */
+    @Column()
+    private int lotteryRange;
 
     /***
      * 下注日期
      */
-    @Column
+    @Column()
     private Date betDate;
 
     /***
@@ -65,10 +71,10 @@ public class Ticket extends BaseEntity{
     private BigDecimal finalScore;
 
     /***
-     * 下注类型 大小， 胜负
+     * 下注类型 胜（大，走大盘）-3   平（走水） -1  负（小） -0
      */
     @Column()
-    private String betType;
+    private int betType;
 
     /***
      * 下注金额
@@ -106,6 +112,12 @@ public class Ticket extends BaseEntity{
     @Column()
     private String source;
 
+    /***
+     * 预计盈利（赢盘赢球）
+     */
+    @Column()
+    private BigDecimal preProfit;
+
     /*************** getter and setter ****************/
 
     public String getSerialNumber() {
@@ -124,11 +136,11 @@ public class Ticket extends BaseEntity{
         this.lotteryClass = lotteryClass;
     }
 
-    public String getLotteryType() {
+    public int getLotteryType() {
         return lotteryType;
     }
 
-    public void setLotteryType(String lotteryType) {
+    public void setLotteryType(int lotteryType) {
         this.lotteryType = lotteryType;
     }
 
@@ -172,11 +184,11 @@ public class Ticket extends BaseEntity{
         this.finalScore = finalScore;
     }
 
-    public String getBetType() {
+    public int getBetType() {
         return betType;
     }
 
-    public void setBetType(String betType) {
+    public void setBetType(int betType) {
         this.betType = betType;
     }
 
@@ -226,5 +238,21 @@ public class Ticket extends BaseEntity{
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public BigDecimal getPreProfit() {
+        return preProfit;
+    }
+
+    public void setPreProfit(BigDecimal preProfit) {
+        this.preProfit = preProfit;
+    }
+
+    public int getLotteryRange() {
+        return lotteryRange;
+    }
+
+    public void setLotteryRange(int lotteryRange) {
+        this.lotteryRange = lotteryRange;
     }
 }
