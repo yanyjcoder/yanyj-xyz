@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>yanyj-utils</artifactId>
+    <version>2.0</version>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>

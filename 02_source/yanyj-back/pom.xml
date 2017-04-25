@@ -26,6 +26,9 @@
     </properties>
 
     <dependencies>
+
+
+
         <!-- jtds取代sql官方驱动 -->
         <dependency>
             <groupId>net.sourceforge.jtds</groupId>
@@ -191,6 +194,20 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
+
         </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

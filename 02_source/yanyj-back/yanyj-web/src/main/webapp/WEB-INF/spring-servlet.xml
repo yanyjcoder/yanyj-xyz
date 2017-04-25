@@ -16,7 +16,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
     </mvc:annotation-driven>
 
     <!-- 启动包扫描功能，以便注册带有@Controller、@service、@repository、@Component等注解的类成为spring的bean -->
-    <context:component-scan base-package="xyz.yanyj.controller" />
+    <context:component-scan base-package="xyz.yanyj.controller.*" />
     <!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -26,7 +26,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
     <!--开启依赖注入-->
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
-    <bean id="lotteryService" class="xyz.yanyj.services.service.impl.LotteryServiceImpl"></bean>
+    <bean id="lotteryService" class="xyz.yanyj.services.service.impl.LotteryServiceImpl" />
 
     <!-- 访问静态文件（jpg,js,css）的方法 -->
     <!--<mvc:resources location="/files/" mapping="/files/**" />-->
