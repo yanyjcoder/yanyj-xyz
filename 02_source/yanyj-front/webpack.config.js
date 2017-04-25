@@ -4,10 +4,10 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    __dirname + '/app/src/app.js'
+    __dirname + '/src/index.js'
   ],
   output: {
-    path: __dirname + '/public/build',
+    path: __dirname + '/resources/build',
     filename: 'bundle.js',
   },
   // devtool: 'eval-source-map',  //生成source file
