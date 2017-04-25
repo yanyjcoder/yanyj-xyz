@@ -1,0 +1,5 @@
+*.iml
+02_source/yanyj-back/.idea
+02_source/yanyj-back/target/
+02_source\yanyj-front/node_modules/*
+
